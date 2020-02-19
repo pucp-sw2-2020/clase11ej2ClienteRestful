@@ -14,7 +14,7 @@ public class ProductDao {
     public List<Product> listarProductos() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Product[]> response = restTemplate.getForEntity(
-                "http://localhost:8080/clase11ej1ServidorRest/product",
+                "http://localhost:8080/clase11ej2ServidorRest/product",
                 Product[].class);
 
         Product[] arrayProductos = response.getBody();
