@@ -53,24 +53,6 @@ public class ProductDao {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        //Dos formas:
-
-        // 1 --> con getForObject
-        /*
-        HashMap<String,Object> responseMap = restTemplate.getForObject(
-                "http://localhost:8080/clase11ej2ServidorRest/product/"+id,
-                HashMap.class);
-
-        if(responseMap.get("estado").equals("ok")){
-            ObjectMapper mapper = new ObjectMapper();
-            Product product = mapper.convertValue(responseMap.get("producto"),Product.class);
-            return product;
-        }else{
-            return null;
-        }
-         */
-
-        // 2 --> con getForEntity con Dto
         ResponseEntity<ProductDto> responseMap = restTemplate.getForEntity(
                 "http://localhost:8080/clase11ej2ServidorRest/product/"+id,
                 ProductDto.class);
